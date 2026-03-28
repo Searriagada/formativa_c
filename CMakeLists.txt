@@ -3,4 +3,4 @@ project(formativa_01)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(formativa_01 main.cpp)
+add_executable(formativa_01 main.c)
