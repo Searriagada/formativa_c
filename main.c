@@ -71,3 +71,5 @@ int main() {
     imprimeLista(lista);
     return 0;
 }
+
+// Estamos ready
