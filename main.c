@@ -67,3 +67,92 @@ int main() {
     imprimeLista(lista);
     return 0;
 }
+
+// CODIGO ARMADO POR JAVIER
+/* #include <stdio.h>
+#include <stdlib.h>
+
+// Definicion del nodo
+
+    typedef struct nodo {
+        int info;
+        struct nodo *sig;
+
+    }tnodo;
+
+// tipo lista
+    typedef tnodo *Lista;
+
+    // Funcion creaNodo
+    Lista creaNodo(int dato)
+    {
+        Lista p = malloc(sizeof(tnodo));
+        if (p == NULL) {
+            printf("No hay espacio suficiente. Este programa de cerra.\n");
+            exit(1);
+        }
+        p->info = dato;
+        p->sig = NULL;
+
+        return p;
+    }
+
+
+
+// Funcion para leer el archivo y construir la lista
+    Lista leeArchivo(char nombreArchivo[30]) {
+        FILE *archivo;
+        Lista inicio = NULL;
+        Lista nuevo, aux;
+        int dato;
+
+        archivo = fopen(nombreArchivo, "r");
+        if (archivo == NULL) {
+            printf("Error: no se pudo abrir el archivo %s\n", nombreArchivo);
+            return NULL;
+        }
+
+        // Lee enteros hasta llegar al final del archivo
+
+        while (fscanf(archivo, "%d", &dato) == 1) {
+            nuevo = creaNodo(dato);
+            if (inicio == NULL) {
+                inicio = nuevo;
+            }
+            else {
+                aux = inicio;
+                while (aux -> sig != NULL) {
+                    aux = aux -> sig;
+                }
+                aux -> sig = nuevo;
+            }
+        }
+        fclose(archivo);
+        return inicio;
+    }
+
+    // Funcion para imprimir la lista
+    void imprimeLista(Lista lista) {
+        Lista aux = lista;
+        if (aux == NULL) {
+            printf("La lista esta vacia. \n");
+            return;
+        }
+        printf("Contenido de la lista: \n");
+        while (aux != NULL) {
+            printf("%d ", aux -> info);
+            aux = aux -> sig;
+        }
+        printf("\n ");
+
+    }
+
+// Programa principal
+int main() {
+        Lista listaNumeros;
+        char nombreArchivo[30] = "datos.txt";
+        listaNumeros = leeArchivo(nombreArchivo);
+        imprimeLista(listaNumeros);
+        return 0;
+    }
+   */
