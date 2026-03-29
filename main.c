@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*
- *
- * Wena Javi
- *
- */
+
 struct datos {
     int info;
     struct datos *sig;
