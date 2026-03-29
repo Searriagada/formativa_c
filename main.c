@@ -63,7 +63,7 @@ void imprimeLista(Lista l) {
 }
 
 int main() {
-    Lista lista = leerArchivo("./documentos/datos.txt");
+    Lista lista = leerArchivo("./cmake-build-debug/documentos/datos.txt");
     imprimeLista(lista);
     return 0;
 }
